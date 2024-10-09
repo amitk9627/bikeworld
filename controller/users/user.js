@@ -1,7 +1,6 @@
 const Users = require("../../model/users/user.js");
 
 const registerUser = async (req, res) => {
-  console.log(req.body);
   try {
     const { userName, password, role } = req.body;
     if (!userName || !password || !role) {
@@ -42,6 +41,9 @@ const loginUser = async (req, res) => {
   try {
     const { userName, password } = req.body;
     const user = await Users.findOne({ userName });
+    if (!user) {
+      return res.status(401).json({ status: false, message: "User Not Found" });
+    }
 
     if (user.password != password) {
       return res

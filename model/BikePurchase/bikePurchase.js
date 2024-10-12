@@ -1,23 +1,22 @@
 const mongoose = require("mongoose");
 
-const BikePurchaseSchema = new mongoose.Schema({
+const BikePurchaseSchema = new mongoose.Schema(
+  {
     personName: {
       type: String,
-      required: true,
-      trim: true,
+      trim: true
     },
     personPhoto: {
       type: String,
     },
     mobileNo: {
       type: String,
-      required: true,
+
       trim: true,
     },
     gender: {
       type: String,
       enum: ["Male", "Female", "Other"],
-      required: true,
     },
     panNo: {
       type: String,
@@ -28,27 +27,33 @@ const BikePurchaseSchema = new mongoose.Schema({
     aadharNo: {
       type: String,
     },
-    aadharUpload: {
+    aadharFront: {
+      type: String,
+    },
+    aadharBack: {
+      type: String,
+    },
+    engineNo: {
+      type: String,
+    },
+    chasisNo: {
       type: String,
     },
     emailID: {
       type: String,
-      required: true,
       trim: true,
     },
     address: {
       type: String,
-      required: true,
+
       trim: true,
     },
     cityName: {
       type: String,
-      required: true,
       trim: true,
     },
     pinCode: {
       type: String,
-      required: true,
       trim: true,
     },
     registrationNo: {

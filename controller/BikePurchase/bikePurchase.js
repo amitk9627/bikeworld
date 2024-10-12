@@ -8,7 +8,6 @@ const addBikePurchase = async (req, res) => {
     "panNo",
     "panUpload",
     "aadharNo",
-    "aadharUpload",
     "emailID",
     "address",
     "cityName",
@@ -18,18 +17,13 @@ const addBikePurchase = async (req, res) => {
     "bikeNo",
     "bikeUpload",
     "remarks",
+    "aadharFront",
+    "aadharBack",
+    "engineNo",
+    "chasisNo",
   ];
-  const data = req.body;
 
   try {
-    for (let item of requiredFields) {
-      if (!data[item]) {
-        return res.status.json({
-          status: false,
-          message: `Missing Field id ${item}`,
-        });
-      }
-    }
     const {
       personName,
       personPhoto,
@@ -38,7 +32,6 @@ const addBikePurchase = async (req, res) => {
       panNo,
       panUpload,
       aadharNo,
-      aadharUpload,
       emailID,
       address,
       cityName,
@@ -48,6 +41,10 @@ const addBikePurchase = async (req, res) => {
       bikeNo,
       bikeUpload,
       remarks,
+      aadharFront,
+      aadharBack,
+      engineNo,
+      chasisNo,
     } = req.body;
 
     // Create a new Person object with the request data
@@ -59,7 +56,6 @@ const addBikePurchase = async (req, res) => {
       panNo: panNo,
       panUpload: panUpload,
       aadharNo: aadharNo,
-      aadharUpload: aadharUpload,
       emailID: emailID,
       address: address,
       cityName: cityName,
@@ -69,6 +65,10 @@ const addBikePurchase = async (req, res) => {
       bikeNo: bikeNo,
       bikeUpload: bikeUpload,
       remarks: remarks,
+      aadharFront: aadharFront,
+      aadharBack: aadharBack,
+      engineNo: engineNo,
+      chasisNo: chasisNo,
     });
     if (!newBikePurchase) {
       return res.status(404).json({

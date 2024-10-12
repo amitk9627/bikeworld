@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
 
 const app = require("./app.js");
 
@@ -10,7 +9,7 @@ const mongodbConnect = async () => {
 };
 mongodbConnect()
   .then(() => console.log("DataBase Connection Successfully............"))
-  .catch((err) => console.log("DataBase Disconnected", err));
+  .catch((err) => console.log("DataBase Disconnected.......", err));
 
 // Routes
 

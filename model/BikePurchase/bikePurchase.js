@@ -16,7 +16,6 @@ const BikePurchaseSchema = new mongoose.Schema(
     },
     gender: {
       type: String,
-      enum: ["Male", "Female", "Other"],
     },
     panNo: {
       type: String,
